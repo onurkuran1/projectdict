@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block title %}
+Kayıt Ol
+{% endblock title %}
+{% block body %}
+{% from "includes/formhelpers.html" import render_field %}
+<h3>Kayıt Ol</h3>
+<hr>
+<form method=post>
+  <dl>
+    {{ render_field(form.username) }}
+    {{ render_field(form.password) }}
+    {{ render_field(form.confirm) }}
+  </dl>
+  <p><input type=submit value=Kayıt>
+</form>
+{% endblock body %}

@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% block title %}
+Anasayfa
+{% endblock title %}
+{% block body %}
+<h3>Hoşgeldiniz. Lütfen aramak istediğiniz kelimeyi arama çubuğuna yazınız</h3>
+ <br>
+{% include "includes/searchbar.html" %}
+<h3>{{word}}</h3>
+{% for d in definitions  %}
+    <tr>
+      <td>{{ d }}</td>
+        <br>
+    </tr>
+{% endfor %}
+{% if word | length>0 %}
+<div class="col-sm-10 active">
+    <a href="/save/{{word}}" class="btn btn-primary active" role="button" aria-pressed="true">kaydet</a>
+</div>
+{% else %}
+ {% endif %}
+{% endblock body %}

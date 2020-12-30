@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Kelimelerim
+{% endblock title %}
+{% block body %}
+<h3>Kelimelerim</h3>
+<hr>
+
+
+<table class="table" id="myTable2" data-toggle="table" data-detail-view="true" data-detail-formatter="detailFormatter">
+  <thead>
+    <tr>
+      <th scope="col">kelime</th>
+      <th scope="col">güç</th>
+        <th scope="col "></th>
+    </tr>
+  </thead>
+  <tbody>
+    {%for l in range(0, lenght)%}
+    <tr>
+      <td>
+<a href="#" data-toggle="popover"  data-content="{{list2[l]}}">{{ list1[l] }}</a>
+</td>
+      <td><div class="progress">
+  <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width:{{list3[l]}}%" aria-valuenow={{list3[l]}} aria-valuemin="0" aria-valuemax="100"></div>
+</div></td>
+
+      <td><a href="/delete/{{ list1[l] }}" class="btn btn-danger float-right">Sil</a> </td>
+
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock body %}
